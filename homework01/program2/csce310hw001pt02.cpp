@@ -56,7 +56,6 @@ void printPermutations( string word , int permutations )
 	// Create an array of permutation char objects.
 	// This is "initialize the first permutation with 12...n"
 	PermutationChar permutationArray[word.size()];
-	printf("Array length: %d\n", (int)(word.size()));
 	for(int i = 0; i < word.size(); i++) {
 		PermutationChar permutationChar;
 		permutationChar.Letter = word[i];
@@ -149,6 +148,11 @@ void printPermutations( string word , int permutations )
 			if(permutationArray[i].Index > maxMobileIndex) {
 				permutationArray[i].Direction = !permutationArray[i].Direction;
 			}
+		}
+
+		// Quit if there aren't any more mobile elements.
+		if(maxMobileArrayIndex == -1 && maxMobileIndex == -1) {
+			return;
 		}
 
 
